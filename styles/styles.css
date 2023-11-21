@@ -1,0 +1,14 @@
+div ul {
+    list-style-type: none;
+}
+
+.navigation{
+    background-color: burlywood;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.navigation li{
+    padding: 20px;
+}

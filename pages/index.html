@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <ul class="navigation">
+                    <li>Home</li>
+                    <li>Service</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1 class="display-1" style="text-align: center;">Hello JavaScript</h1>
+            <div>
+                <h2 class="display-3">JavaScript Capabilities</h2>
+                    JavaScript’s capabilities greatly depend on the environment that runs JavaScript.<br> For instance,
+                    Node.JS supports functions that allow JavaScript to read and write arbitrary files, perform <br> network
+                    requests, etc.
+                    In-browser JavaScript can do everything related to web page manipulation<br> and interaction with the
+                    user and the web server. For example, in-browser JavaScript is able to:<br>
+                <ul>
+                    <li>Add new HTML to the page, change the existing content, and modify styles.</li>
+                    <li>React to user actions, and run code on mouse clicks, pointer movements, and key presses.</li>
+                    <li>Send requests over the network to remote servers, and download and upload files.</li>
+                    <li>Get and set cookies, ask questions to the user, and show messages.</li>
+                    <li>Remember data on the client-side (via “local storage”).</li>
+                </ul>
+            </div>
+
+            <h2>Basic JavaScript Grammar</h2>
+            <div>
+                <p>
+                    JavaScript borrows most of its syntax from Java, C, and C++, but it has also been influenced by Awk, Perl, and Python.<br> If you have worked with any of these languages in the past, JavaScript will look very familiar.
+                    JavaScript is case-sensitive<br> and uses the Unicode character set. This means that even special characters within the Unicode set can be used in JavaScript<br> source code, such as for variable names (more on this later).
+                    In JavaScript, instructions are called statements, and each statement is separated with a semicolon (;).<br> You will see semicolons omitted from some statements in JavaScript; this is because they are not strictly required 
+                    if a statement is written on its own line.<br> However, it is considered best practice to always include a semicolon after a statement, even when it is not strictly needed. This practice greatly reduces <br>the chances of bugs in your code.
+                    JavaScript files are read from top to bottom, left to right. The JavaScript engine, which runs the JavaScript code, converts<br> scripts into a sequence of input elements, such as identifiers, keywords, literals, punctuators, white space, and comments.
+                </p>
+            </div>
+            <div>
+                <h2> Keywords and Reserved Words</h2>
+                    <p>In programming, there are certain words that carry special meaning to the program. Words like "true" and "if" control the behavior of the code, and tell JavaScript what to do.<br> These words are called reserved words, and they cannot be used out of the proper context.
+                    As an example, you cannot name one of your variables "default,"<br> because JavaScript expects "default" to have specific purpose and meaning. As you continue exploring JavaScript, you will run into most if not all of these reserved words<br> in their appropriate contexts.       
+                    For now, here's a list of all of the reserved words so that you can avoid using them improperly. Don't worry about memorizing this list;<br> if you use one of these words improperly, JavaScript will let you know.</p> 
+            </div>
+            <div>
+                <h2>Console.log and script Tags</h2>
+                <p>The console object provides access to the browser's debugging console, and can be accessed from any global object.<br>
+                    log() is a method of the console object, which allows for any value type to be displayed in the browser’s console or in the server-side console.<br> This is an important method for testing and debugging purposes, which we will make use of later.      
+                    The script "tag allows you to embed JavaScript<br> into an HTML page. It can have attributes such as type and src.        
+                    The type attribute allows you to specify the type of text you will be writing in between<br> the opening and closing tag.
+                    The src attribute allows you to link a JavaScript file external to your HTML file.</p>
+            </div>
+
+            <ul>
+            
+                <li>
+                    <di>
+                    <h2>JavaScript data types</h2>
+                    <p>JavaScript is a loosely typed (high-level, weakly typed, or dynamic type) language, which means that we do not need to specify data types of variables because JavaScript<br> automatically determines the variables' data type.
+                        Some of the available data types in JavaScript include:          
+                        Number – JavaScript has two different types of numbers.
+                        Integers<br> - Whole numbers such as 1, 100, 5, 100000.
+                        Float - Numbers with decimal values such as 1.5, 34.33, 5.0.
+                        String – A sequence of characters, including spaces, enclosed<br> in double quotes, single quotes, or backticks.
+                        <strong style="color: red;">
+                            “Hello to String.”
+                            ‘Bye to double quotes.’
+                            `Welcome to backticks.`
+                        </strong>
+                        Boolean – Logical type values. Boolean can only hold<br> 
+                        two different values: true or false:
+                        Null – Does not belong to any type described above. Its purpose is to indicate that there is no value. Null is an empty<br> 
+                        or non-existent value, and must be assigned.
+                        Undefined – Indicates that a variable has not been assigned a value or null. Variables are often declared without a value<br>. 
+                        The value could be something that has yet to be calculated or something that will be provided later, like user input.
+                        Objects – Used to store collections of data of any<br> of the types mentioned above, or more complex entities.</p>
+                    <h3> Variable Declarations</h3>
+                    <p>
+                        A variable is a symbolic name for a memory location. The variable's name can be used to access the data the variable contains.<br> They are called variables because the data can change.              
+                        In order to declare a variable, you can use three keywords - var, let, and const:
+                        <li style="color: brown;">var myVariable = “Some value”;</li>
+                        <li style="color: brown;">let mySecond = true;</li>
+                        <li style="color: brown;">const PI = 3.141592653589793;</li>
+                    </p>
+
+                    </di>
+                </li>
+                <li>
+                    <h2>JavaScript comments</h2>
+                    <h3>Single line comment</h3>
+                    <p>Comments in JavaScript can be written with two forward slashes //, which are referred to as line comments, <br>as they end at the physical line end</p>
+                    <h3>multiple line comment</h3>
+                    <p>Comments can also start with /** and end with */ and can span as many lines as needed, which are referred to as block comments.</p>
+                </li>
+                <li>
+                    <h2>JavaScript var let and const</h2>
+                </li>
+                <li>
+                    <h2>JavaScript operators</h2>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer" style="border: 2px solid black; padding-bottom: 0; margin-bottom: 0; max-width: 2070px; height: 50px; background-color: burlywood;">
+     
+    </footer>
+</body>
+<script src="../script/script.js"></script>
+
+</html>
