@@ -1,14 +1,159 @@
-div ul {
-    list-style-type: none;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-.navigation{
-    background-color: burlywood;
-    display: flex;
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+.hamburger-menu {
+    position: relative;
     flex-direction: row;
-    margin: 0 auto;
 }
 
-.navigation li{
+.menu-icon {
+    display: flex;
+    cursor: pointer;
+    font-size: 54px;
+    justify-content: end;
+    margin-right: 10px;
+ 
+}
+
+.navigation {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    right: 0;
+    left: 0;
+    top: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.navigation li {
+    margin: 10px 0;
+}
+.navigation li a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon + .navigation {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .container {
+        width: 95%;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+.display-1 {
+    text-align: center;
+}
+
+.display-3 {
+    font-weight: bold;
+}
+
+section {
+    margin-bottom: 20px;
     padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.basic, section div {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#capabilities ul, #data-types ul, #operators ul, #logical-operators ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 2px solid #333;
+    overflow: auto;
+}
+
+code {
+  background-color: #eee;
+  color: blue;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+
+hgroup {
+    text-align: end;
+    padding-right: auto;
+    border-right: 10px solid #00c8d7;
+  }
+  
+  hgroup h1 {
+    margin-bottom: 0;
+  }
+  
+  hgroup p {
+    margin: 0;
+    font-weight: bold;
+  }
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+.basic li, .basic p {
+    font-size: 1rem;
+}
+
+strong {
+    color: red;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 95%;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }

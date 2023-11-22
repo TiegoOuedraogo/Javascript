@@ -9,27 +9,43 @@
 </head>
 
 <body>
+
     <header>
         <nav>
-            <div>
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
                 <ul class="navigation">
-                    <li>Home</li>
-                    <li>Service</li>
-                    <li>Contact</li>
+                    <li><a href="#capabilities">JavaScript Capabilities</a></li>
+                    <li><a href="#basic-grammar">Basic JavaScript Grammar</a></li>
+                    <li><a href="#comments">JavaScript Comments</a></li>
+                    <li><a href="#data-types">JavaScript Data Types</a></li>
+                    <li><a href="#variable">Variable Declarations</a></li>
+                    <li><a href="#operators">Arithmetic Operators</a></li>
+                    <li><a href="#logical-operators">Logical Operators</a></li>
+                    <li><a href="#string-concatenation">String Concatenation</a></li>
+                    <li><a href="#string-access">String Access</a></li>
+                    <li><a href="#string-comparison">String Comparison</a></li>
+                    <li><a href="#long-literal-strings">Long Literal Strings</a></li>
+                    <li><a href="#escape-sequences">Escape Sequences</a></li>
+                    <li><a href="#template-literals">Template Literals</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container">
-        <section>
-            <h1 class="display-1" style="text-align: center;">Hello JavaScript</h1>
-            <div>
+        <section id="capabilities">
+            <h3 class="display-1" style="text-align: center;">Hello JavaScript</h3>
+            <div class="basic">
                 <h2 class="display-3">JavaScript Capabilities</h2>
-                    JavaScript’s capabilities greatly depend on the environment that runs JavaScript.<br> For instance,
-                    Node.JS supports functions that allow JavaScript to read and write arbitrary files, perform <br> network
-                    requests, etc.
-                    In-browser JavaScript can do everything related to web page manipulation<br> and interaction with the
-                    user and the web server. For example, in-browser JavaScript is able to:<br>
+                <p>
+                    JavaScript’s capabilities greatly depend on the environment that runs JavaScript.
+                    For instance, Node.JS supports functions that allow JavaScript to read and write arbitrary files,
+                    perform network requests, etc.
+                    In-browser JavaScript can do everything related to web page manipulation and interaction with the
+                    user and the web server.
+                    For example, in-browser JavaScript is able to:
+                </p>
                 <ul>
                     <li>Add new HTML to the page, change the existing content, and modify styles.</li>
                     <li>React to user actions, and run code on mouse clicks, pointer movements, and key presses.</li>
@@ -38,100 +54,530 @@
                     <li>Remember data on the client-side (via “local storage”).</li>
                 </ul>
             </div>
-
+        </section>
+        <section id="basic-grammar">
             <h2>Basic JavaScript Grammar</h2>
             <div>
                 <p>
-                    JavaScript borrows most of its syntax from Java, C, and C++, but it has also been influenced by Awk, Perl, and Python.<br> If you have worked with any of these languages in the past, JavaScript will look very familiar.
-                    JavaScript is case-sensitive<br> and uses the Unicode character set. This means that even special characters within the Unicode set can be used in JavaScript<br> source code, such as for variable names (more on this later).
-                    In JavaScript, instructions are called statements, and each statement is separated with a semicolon (;).<br> You will see semicolons omitted from some statements in JavaScript; this is because they are not strictly required 
-                    if a statement is written on its own line.<br> However, it is considered best practice to always include a semicolon after a statement, even when it is not strictly needed. This practice greatly reduces <br>the chances of bugs in your code.
-                    JavaScript files are read from top to bottom, left to right. The JavaScript engine, which runs the JavaScript code, converts<br> scripts into a sequence of input elements, such as identifiers, keywords, literals, punctuators, white space, and comments.
+                    JavaScript borrows most of its syntax from Java, C, and C++, but it has also been influenced by Awk,
+                    Perl, and Python.
+                    JavaScript is case-sensitive and uses the Unicode character set. This means that even special
+                    characters within the Unicode set can be used in JavaScript source code, such as for variable names.
+                    In JavaScript, instructions are called statements, and each statement is separated with a semicolon
+                    (;).
+                    JavaScript files are read from top to bottom, left to right. The JavaScript engine converts scripts
+                    into a sequence of input elements, such as identifiers, keywords, literals, punctuators, white
+                    space, and comments.
                 </p>
             </div>
             <div>
-                <h2> Keywords and Reserved Words</h2>
-                    <p>In programming, there are certain words that carry special meaning to the program. Words like "true" and "if" control the behavior of the code, and tell JavaScript what to do.<br> These words are called reserved words, and they cannot be used out of the proper context.
-                    As an example, you cannot name one of your variables "default,"<br> because JavaScript expects "default" to have specific purpose and meaning. As you continue exploring JavaScript, you will run into most if not all of these reserved words<br> in their appropriate contexts.       
-                    For now, here's a list of all of the reserved words so that you can avoid using them improperly. Don't worry about memorizing this list;<br> if you use one of these words improperly, JavaScript will let you know.</p> 
+                <h2>Keywords and Reserved Words</h2>
+                <p>
+                    In programming, certain words carry special meaning. Words like "true" and "if" control the behavior
+                    of the code.
+                    These words are called reserved words, and they cannot be used out of context. For example, you
+                    cannot name a variable "default,"
+                    because JavaScript expects "default" to have a specific purpose and meaning.
+                </p>
             </div>
             <div>
                 <h2>Console.log and script Tags</h2>
-                <p>The console object provides access to the browser's debugging console, and can be accessed from any global object.<br>
-                    log() is a method of the console object, which allows for any value type to be displayed in the browser’s console or in the server-side console.<br> This is an important method for testing and debugging purposes, which we will make use of later.      
-                    The script "tag allows you to embed JavaScript<br> into an HTML page. It can have attributes such as type and src.        
-                    The type attribute allows you to specify the type of text you will be writing in between<br> the opening and closing tag.
-                    The src attribute allows you to link a JavaScript file external to your HTML file.</p>
+                <p>
+                    The console object provides access to the browser's debugging console. The log() method of the
+                    console object allows for any value type to be displayed in the browser’s console or in the
+                    server-side console.
+                    The script tag allows you to embed JavaScript into an HTML page. It can have attributes such as type
+                    and src.
+                </p>
             </div>
+        </section>
+        <section id="comments">
+            <div>
+                <h2>JavaScript Comments</h2>
+                <h3>Single Line Comment</h3>
+                <p>Comments in JavaScript can be written with two forward slashes //, referred to as line comments.</p>
+                <h3>Multiple Line Comment</h3>
+                <p>Comments can also start with /* and end with */ and can span as many lines as needed, referred to as
+                    block comments.</p>
+            </div>
+        </section>
+        <section id="data-types">
+            <div>
+                <h2>JavaScript Data Types</h2>
+                <p>
+                    JavaScript is a loosely typed language, which means that we do not need to specify data types of
+                    variables because JavaScript automatically determines the variables' data type.
+                    Some of the available data types in JavaScript include:
+                </p>
+                <ul>
+                    <li>Number – Integers (whole numbers) and Floats (numbers with decimal values).</li>
+                    <li>String – A sequence of characters, including spaces, enclosed in quotes.</li>
+                    <li>Boolean – Logical type values. Boolean can only hold two values: true or false.</li>
+                    <li>Null – Indicates a non-existent or empty value.</li>
+                    <li>Undefined – Indicates that a variable has not been assigned a value or null.</li>
+                    <li>Objects – Used to store collections of data or more complex entities.</li>
+                </ul>
+            </div>
+        </section>
 
+        <section id="variable">
+            <div>
+                <h2>Variable Declarations</h2>
+                <p>
+                    A variable is a symbolic name for a memory location. Variables are called so because the data they
+                    hold can change.
+                    Variables can be declared using var, let, or const. However, it's recommended to use let and const
+                    for modern JavaScript practices.
+                </p>
+                <h3>The let statement</h3>
+                <p>
+                    The let statement declares a block-scoped variable that is reassignable but not re-declarable within
+                    its scope.
+                </p>
+                <h3>The const statement</h3>
+                <p>
+                    The const statement declares a block-scoped variable that is not reassignable or re-declarable
+                    within its scope.
+                </p>
+            </div>
+        </section>
+
+        <section id="operators">
+            <article>
+                <h2>Arithmetic Operators</h2>
+                <p>
+                    Most arithmetic operations in coding can be done using the traditional operators of mathematics.
+                    Programming logic adds a few additional operators for efficient coding. The simple arithmetic
+                    operators include:
+                </p>
+                <ul>
+                    <li>The '+' operator, which returns the addition of two values. <strong style="color: red;">e.g., 3
+                            + 4 returns 7</strong></li>
+                    <li>The '-' operator, which returns the difference between two values. <strong
+                            style="color: red;">e.g., 3 - 2 returns 1</strong></li>
+                    <li>The '*' operator, which returns the product of two values. <strong style="color: red;">e.g., 6 *
+                            4 returns 24</strong></li>
+                    <li>The '/' operator, which returns the division of two values. <strong style="color: red;">e.g., 16
+                            / 8 returns 2</strong></li>
+                    <li>The '%' operator, which returns the remainder of two values. <strong style="color: red;">e.g.,
+                            14 % 3 returns 2</strong></li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>Comparison Operators</h2>
+                <p>
+                    In addition to arithmetic operators, JavaScript also includes comparison operators for evaluating
+                    conditions:
+                </p>
+                <ul>
+                    <li>The '>' operator checks if a value is strictly greater than another. <strong
+                            style="color: red;">e.g., 3 > 4 returns false</strong></li>
+                    <li>The '<' operator checks if a value is strictly less than another. <strong style="color: red;">
+                            e.g., 5 < 10 returns true</strong>
+                    </li>
+                    <li>The '>=' operator checks if a value is greater than or equal to another. <strong
+                            style="color: red;">e.g., 78 >= 90 returns false</strong></li>
+                    <li>The '<=' operator checks if a value is less than or equal to another. <strong
+                            style="color: red;">e.g., 56 <= 44 returns false</strong>
+                    </li>
+                    <li>The '==' operator checks if a value is equal to another. <strong style="color: red;">e.g., 10 ==
+                            10 returns true</strong></li>
+                    <li>The '!=' operator checks if a value is not equal to another. <strong style="color: red;">e.g.,
+                            10 != 30 returns true</strong></li>
+                </ul>
+                <p style="font-size: 20px; color: red;"><strong>Note:</strong> The '==' operator can exhibit unexpected
+                    behavior, as it performs type coercion. For instance, '3' == 3 evaluates to true, despite one being
+                    a string and the other an integer.</p>
+            </article>
+        </section>
+        <section id="logical-operators">
+            <h2>Logical Operators</h2>
+            <p>
+                Logical operators work with true, false, and null values. They are used to evaluate results of comparison operators and to form more complex conditions.
+            </p>
             <ul>
-            
-                <li>
-                    <di>
-                    <h2>JavaScript data types</h2>
-                    <p>JavaScript is a loosely typed (high-level, weakly typed, or dynamic type) language, which means that we do not need to specify data types of variables because JavaScript<br> automatically determines the variables' data type.
-                        Some of the available data types in JavaScript include:<br>         
-                       <sep style="color: rgb(8, 0, 255);">Number – JavaScript has two different types of numbers.<br>
-                        Integers- Whole numbers such as 1, 100, 5, 100000.<br>
-                        Float - Numbers with decimal values such as 1.5, 34.33, 5.0.<br>
-                        String – A sequence of characters, including spaces, enclosed in double quotes, single quotes, or backticks.</sep> 
-                        <strong style="color: red;"><br>
-                            “Hello to String.”<br>
-                            ‘Bye to double quotes.’<br>
-                            `Welcome to backticks.`<br>
-                        </strong>
-                        Boolean – Logical type values. Boolean can only hold<br> 
-                        two different values: true or false:
-                        Null – Does not belong to any type described above. Its purpose is to indicate that there is no value. Null is an empty<br> 
-                        or non-existent value, and must be assigned.
-                        Undefined – Indicates that a variable has not been assigned a value or null. Variables are often declared without a value<br>. 
-                        The value could be something that has yet to be calculated or something that will be provided later, like user input.
-                        Objects – Used to store collections of data of any<br> of the types mentioned above, or more complex entities.</p>
-                    <h3> Variable Declarations</h3>
-                    <p>
-                        A variable is a symbolic name for a memory location. The variable's name can be used to access the data the variable contains.<br> They are called variables because the data can change.              
-                        In order to declare a variable, you can use three keywords - var, let, and const:
-                        <li style="color: brown;">var myVariable = “Some value”;</li>
-                        <li style="color: brown;">let mySecond = true;</li>
-                        <li style="color: brown;">const PI = 3.141592653589793;</li>
-                    </p>
-                    <h1>Never use var only let and const</h1>
-                    <h2>The let statement</h2>
-                    <p> 
-                    The let statement declares a variable in JavaScript that abides by the following rules:<br><i style="color: red;"><strong> 
-                    It is block scoped.<br>
-                    It is reassignable.<br>
-                    It is not re-declarable within its scope.<br>
-                    It is subject to hoisting.</strong> </i>
-                    </p>
-                    <h2>The const statement</h2>
-                    <p> 
-                    The let statement declares a variable in JavaScript that abides by the following rules:<br><i style="color: red;"><strong> 
-                    It is block scoped.<br>
-                    It is not reassignable.<br>
-                    It is not re-declarable within its scope.<br>
-                    It is subject to hoisting.</strong> </i>
-                    </p>
-                    </di>
-                </li>
-                <li>
-                    <h2>JavaScript comments</h2>
-                    <h3>Single line comment</h3>
-                    <p>Comments in JavaScript can be written with two forward slashes //, which are referred to as line comments, <br>as they end at the physical line end</p>
-                    <h3>multiple line comment</h3>
-                    <p>Comments can also start with /** and end with */ and can span as many lines as needed, which are referred to as block comments.</p>
-                </li>
-                <li>
-                    <h2>JavaScript var let and const</h2>
-                </li>
-                <li>
-                    <h2>JavaScript operators</h2>
-                </li>
+                <li><code>&&</code> (AND): true if all conditions are true.</li>
+                <li><code>||</code> (OR): true if at least one condition is true.</li>
+                <li><code>!</code> (NOT): negates the given result.</li>
             </ul>
         </section>
+
+        <section id="string-concatenation">
+            <h2>String Concatenation</h2>
+            <p>
+                In JavaScript, the plus sign (+) is used for string concatenation. When one operand is a string, the + operator concatenates the operands.
+            </p>
+        </section>
+
+        <section id="string-access">
+            <h2>String Access</h2>
+            <p>
+                Individual characters in a string can be accessed using square bracket notation. JavaScript uses zero-based indexing.
+            </p>
+        </section>
+
+        <section id="string-comparison">
+            <h2>String Comparison</h2>
+            <p>
+                Strings can be compared alphabetically in JavaScript. The comparison is case-sensitive.
+            </p>
+        </section>
+
+        <section id="long-literal-strings">
+            <h2>Long Literal Strings</h2>
+            <p>
+                Long strings can be split into multiple lines for readability using the + operator or the backslash (\) for line continuation.
+            </p>
+        </section>
+
+        <section id="escape-sequences">
+            <h2>Escape Sequences</h2>
+            <p>
+                Escape sequences allow encoding special characters in strings, like newline (\n), tab (\t), and others.
+            </p>
+        </section>
+
+        <section id="template-literals">
+            <h2>Template Literals</h2>
+            <p>
+                Template literals, delimited with backticks (`), support multi-line strings and embedded expressions.
+            </p>
+        </section>
+        <section>
+            <article>
+                <h1>Control Flow and Error Handling</h1>
+                <h2>Learning Objectives</h2>
+                <p>By the end of this lesson, learners should be able to:
+                    <ul>
+                    <li>Describe block and scope</li>
+                    <li>Create conditional statements within JavaScript.</li>
+                    <li>Implement basic error handling with try...catch.</li>
+                    <li>Fix basic errors through browser debugging.</li>
+                </ul>
+                </p>
+                <h2>Setup</h2>
+                <p>In order to participate in this lesson's examples and activities, let's look at the browser's developer console.
+
+                    Open a web browser to a blank tab, and press F12 or Ctrl + Shift + I on Windows or ⌘ + ⌥ + I.
+                    
+                    Alternatively, you can navigate to the developer tools using the menu bar on:
+                    <ul>
+                        <li>Firefox: ➤ Web Developer ➤ Toggle Tools, or Tools ➤ Web Developer ➤ Toggle Tools
+                        </li>
+                        <li>Chrome: More tools ➤ Developer tools
+                        </li>
+                        <li>Safari: Develop ➤ Show Web Inspector. If you can't see the Develop menu, go to Safari ➤ Preferences ➤ Advanced, and check the Show Develop menu in menu bar checkbox.
+                        </li>
+                        <li>Opera: Developer ➤ Developer tools
+                        </li>
+                    </ul>
+                    You may have also accessed these tools during HTML and CSS lessons by using the "Inspect Element" option in the context menu.
+                    For the purposes of this lesson, we'll be using the "Console" and "Sources" tabs within Chrome.
+                    
+                    <strong>Note:</strong> that you can type JavaScript code directly into the console, and it will execute!
+                    
+                    <ul>
+                        <li>Try this by typing something simple like let x = 10 + 5 and hitting enter.</li>
+                          <ul>
+                            <li>The console will show "undefined" because the let statement does not return any values, it just declares them.
+                            </li>
+                            <li>Try typing x and hitting enter to see the value of x.
+                            </li>
+                          </ul>
+                
+                        <li>Now type let y = x * 2 and hit enter.</li>
+                        <ul>
+                            <li>Type y and hit enter to see the computed value.
+                            </li>
+                            <li>Notice how the console remembers the value of x?
+                            </li>
+                        </ul>
+                        <li>You can clear your console's memory by refreshing the page.
+                        </li>
+                      </ul>
+                      This gives you a simple way to test small snippets of JavaScript code without the need for a local or external file or development environment.
+
+                </p>
+
+        </article>
+    </section>
+    <section>
+        <article>
+            <h1>Code Blocks</h1>
+            <p>
+                A block statement is used to group zero or more statements. The block is delimited by a pair of braces ("curly brackets") and contains a list of zero or more statements and declarations. Beyond organizing code, code blocks have implications on the way the code within them is executed.
+
+                Blocks are typically paired with other JavaScript statements, such as conditionals (which we will cover next) or functions (which will be covered in a later lesson).
+
+                Blocks also have an effect on the way variables and other declarations can be accessed. This is referred to as "scope," which we will cover next.
+
+                Here is an example of a very simple block:<br>
+                <pre> 
+                <img src="../images/simple block.png" alt="simple block">
+            </pre>
+                You can copy and paste this entire piece of code into the browser development console to quickly test its behavior.
+
+                <h1>Scope</h1>
+                In general, the concept of scope in computer programming pertains to the accessibility of variables and functions from a given point of the code. In other words, as you write a line of code, what variables and functions do you have access to?
+
+                avaScript has three types of scope:
+                <ul>
+                    <li>Global scope: The default scope for all code running in script mode.
+                    </li>
+                    <li>Module scope: The scope for code running in module mode.
+                    </li>
+                    <li>Function scope: The scope created with a function.
+                    </li>
+                </ul>
+                In addition, variables declared with let or const can belong to an additional scope:
+                <li>Block scope: The scope created with a pair of curly braces (a block).
+                </li>
+                In this lesson, we will discuss Global and Block scope. As you continue learning, identifying the scope behavior of modules and functions will be a simple task.
+                <h1>Why the Different Types of Scope?</h1>
+                There's a concept in programming known as The Principle of Least Access.
+
+                The principle is based on the idea that limiting the accessibility of variables (and functions) helps reduce bugs in the code - think of it as a form of "code security."
+
+                A practical benefit of having different scope, however, is being able to use the same names for variables in different blocks! If there were only one scope, this wouldn't be possible.
+                <h2>Global Scope</h2>
+                In our browsers, the global scope is represented by the window object. The window object is part of the Browser Object Model (BOM), which we will cover in a later lesson, but it is important to understand some key concepts now.<br>
+
+                The window object is at the top of the scope chain, and its properties are available to everything we write.<br>
+
+                It is generally bad form for our programs to create variables in the global scope. Doing so risks us overwriting data in use by JS libraries/frameworks or other routines.
+
+                Creating lots of global variables is referred to as "polluting the global scope," and we all know that it's not nice to pollute!<br>
+
+                If we define a variable (or a function) within the global scope, it becomes a property on the window object. You can see this in action by typing var pollution = 'sucks' in the console, then type window. (don't forget the dot), scroll down and find the pollution we have created - yuck!<br>
+
+                Although using var in the global scope results in a global variable being created, interestingly, those created using let and const do not appear as properties on the window object. This is yet another benefit of using let and const; avoid global pollution!
+
+                <h1>Block Scope</h1>
+                Both let and const define variables that can only be accessed within the code block they are defined in.<br>
+
+                A code block is created by using curly braces.<br>
+
+                The following code modified from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">MDN's docs about let</a> demonstrates differences between let and var:<br>
+                <pre> 
+                <img src="../images/simple block.png"> <br>
+            </pre>
+            <strong>Notice:</strong> how code blocks differentiate between segments of code, allowing us to organize variables and processes. As demonstrated, you can also nest code blocks within one another. Blocks and scope will become very important concepts as you continue to add to your programming repetoire, so make sure you understand the concepts thoroughly.         
+            </p>
+        </article>
+    </section>
+
+    <section>
+        <h1>Examples of Scope</h1>
+        <article>
+            <h2>Understanding Scope</h2>
+            <p>It is important to note that blocks have access to the set of variables and functions defined within their own scope AND in the outer scopes...</p>
+            <pre>
+                let x = 10;
+                let y = 5;
+                
+                {
+                    let z = x + y;
+                    console.log(z);
+                }
+            </pre>
+            <p>Here, the block has access to both x and y because they exist in the outer scope (in this case, the global scope)...</p>
+        </article>
+    
+        <article>
+            <h2>Nested Scope Example</h2>
+            <pre>
+                    let x = 10;
+                    
+                    {
+                        let y = 5;
+                        {
+                            let z = x + y;
+                            console.log(z);
+                        }
+                    }
+            </pre>
+            <p>If the JS runtime engine gets to the global scope and can't find what it's looking for, that's when your program ceases due to a ReferenceError...</p>
+        </article>
+    </section>
+    
+    <section>
+        <h1>Control Flow and Conditionals</h1>
+        <article>
+            <p>In programming, conditionals perform different operations based on the given test parameters. There are many different types of conditionals, which are one of the most frequently-used tools for building scripts and program logic. Using conditionals in this way allows us to control the order in which JavaScript executes the statements in a script, a concept known as "control flow."
+
+                Code is typically run in order from the first line in a file to the last, unless the computer runs across structures that change the control flow, such as conditionals (and loops, which we will cover in the next lesson).
+                
+                For example, this if...else conditional is used to test two conditions:</p>
+            <pre>
+    if (x == 10) {
+        // do this
+    } else {
+        // do this
+    }
+            </pre>
+            <p>if...else statements are just one type of conditional, but they are the most common The syntax of an if...else statement is shown above; if the expression within the if portion evaluates to true, it will execute the block of code that follows. If it evaluates to false, it will execute the else portion.
+
+                You can also forgo the else entirely, and just test a single condition with if, as follows:
+                Unlike some other languages, simply indenting lines of code does not create blocks. Since you can't have an else without an attached if, the code runs into an error.
+
+                It is recommended to always include code blocks alongside statements that traditionally make use of them, like if...else. This makes code more readable, more maintainable, and more expandable.
+            </p>
+        </article>
+        </section>
+    
+    <section>
+        <h1>"Truthy" and "Falsy"</h1>
+        <article>
+            <p>In JavaScript, data type coercion happens automatically in many cases Numbers can be directly added to strings, etc. This automatic conversion of one data type to another helps provide context to certain situations without the need for strict comparisons.
+
+                One of the most common examples of this is in comparisons and logic statements with conditionals.
+                
+                A "truthy" value is any value that is considered true when it is encountered in a Boolean context, like within an if statement. All values are truthy unless they are defined as falsy, and the only falsy values are:</p>
+               
+                <ul>
+                    <li>false</li>
+                    <li>0</li>
+                    <li>-0</li>
+                    <li>0n</li>
+                    <li>""</li>
+                    <li>null</li>
+                    <li>undefined</li>
+                    <li>NaN</li>
+                </ul>
+            
+        </article>
+    </section>
+
+    <section>
+        <h1>Nested if...else</h1>
+        <article>
+            <p>You can test multiple conditions together by "nesting" if...else statements.
+
+                The structure of nested if...else looks like this:
+            </p>
+            <pre>
+                if (true) {
+                    if (true) {
+                        // do this
+                    } else {
+                        // do this
+                    }
+                } else {
+                    //do this
+                }
+            </pre>
+            You can also "chain" multiple if...else statements together; we call this else if.
+            <pre>
+                if (x >= 10) {
+                    //do this
+                } else if (x <= 10>) {
+                    //do this
+                } else {
+                    //do this
+                }
+            </pre>
+                <img src="../images/Condition.png" alt="Condition">
+            
+        </article>
+    </section>
+    <section>
+        <hgroup>
+        <h1>Switch Statements</h1>
+        <p>Understanding Switch statements</p>
+    </hgroup>
+            <article>
+                <p>
+                    Another option for control flow is the switch statement.
+
+                    The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in any case that follows the matching case.
+
+                    For example:
+                    <pre>
+                        let x = '0';
+                            switch (x) {
+                            case '1':
+                                // do something...
+                                break;
+                            case '2':
+                                // do something...
+                                break;
+                            default:
+                                // do something...
+                                break;
+                            }
+                    </pre>
+                </p>
+                
+                <p>A breakdown of the syntax for a switch statement is as follows:</p>
+                <ul>
+                    <li>The <code>switch</code> keyword signifies the start of a switch statement.</li>
+                    <li>A value needs to be provided between the parentheses, and this value can be in the form of a literal or variables.</li>
+                    <li>The <code>case</code> clause specifies what value the switch argument can be. Both the switch argument and its case values must match in data type.</li>
+                    <li>The <code>break</code> keyword tells JavaScript to get out of the switch statement and not evaluate any other case.<strong></strong> Without the break keyword, JavaScript will continue to execute other case clauses.</li>
+                    <li>The <code>default</code> keyword is like the else statement. Best practice is to always use the default keyword for case values that are invalid.</li>
+                </ul>
+                <p>The example below simulates a simple calculator that can only perform four different arithmetic operations on two numbers.
+                    <pre>
+                        let x = 5;
+                        let y = 4;
+                        let operand = "*";
+                        switch (operand) {
+                        case "+":
+                            console.log(x + y);
+                            break;
+                        case "-":
+                            console.log(x - y);
+                            break;
+                        case "*":
+                            console.log(x * y);
+                            break
+                        case "/":
+                            console.log(x / y);
+                            break;
+                        default:
+                            console.log("Invalid Operand")
+                            break;
+                        }
+                    </pre>
+                    Notice that <code>default</code> is being used for the invalid <code>case</code>. Also, the break keyword is not needed in the <code>default</code>  case; it depends on the style of the programmer to place the <code>break</code>  keyword there.
+                </p>
+            </article>
+    </section>
+
+    <section>
+        <h1>Ternary Operators </h1>
+            <article>
+                <p>
+                    The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark <code>(?)</code> , then an expression to execute if the condition evaluates to <code>true</code> , followed by a colon <code>(:)</code> , and finally the expression to execute if the condition is <code>false</code>.
+                    <pre>
+                    (conditional) ? (value_if_true) : (value_if_false)
+                    </pre>
+                    While this is technically an operator and not an element of control flow, this operator is frequently used as an alternative to an<code>if...else</code>  statement.
+    
+                    For example, if we wanted to test whether a value was equal to 10, we could do the following:
+                    <pre>
+                        let x = 10;
+                        let isTen;
+    
+                        if (x == 10) {
+                            isTen = true;
+                        } else {
+                            isTen = false;
+                        }
+                    </pre>
+                    Or, we could use a simple ternary operator to accomplish the same task in a less verbose manner:
+                    <pre>
+                        let x = 10;
+                        let isTen = x == 10 ? true : false
+                    </pre>
+                </p>
+            </article>
+       
+    </section>
     </main>
-    <footer class="footer" style="border: 2px solid black; padding-bottom: 0; margin-bottom: 0; max-width: 2070px; height: 50px; background-color: burlywood;">
-     
+    <footer>
+
     </footer>
 </body>
 <script src="../script/script.js"></script>
