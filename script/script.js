@@ -1,3 +1,32 @@
+window.onscroll = function() {
+    navbarScrollFunction();
+    scrollFunction();
+};
+
+function scrollFunction() {
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+}
+
+function navbarScrollFunction() {
+    let navbar = document.querySelector('nav');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+}
+
+
+document.getElementById("scrollTopBtn").addEventListener("click", function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+
 // variable declaration
 
 var myVariable = "Some value";
