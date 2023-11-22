@@ -575,6 +575,209 @@
             </article>
        
     </section>
+
+    <section>
+        <h1>Errors in JavaScript</h1>
+        <article>
+            <h2>Common JavaScript Errors</h2>
+            <p>We have mentioned a few errors that you might encounter, such as <code>ReferenceError</code> or <code>SyntaxError</code> . While these two errors are typically fixed within the source code itself, there are many types of errors that you could encounter that are outside of your control. This is particularly true when dealing with external servers or databases.</p>
+            <p>You can take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors">MDN JavaScript error reference</a> to see the errors that JavaScript can throw -- there are a lot of them, but some are much more common than others.</p>
+        </article>
+    
+        <article>
+            <h2>Creating Custom Errors</h2>
+            <p>We can also create our own errors! This can be useful for a number of reasons, such as validating data before code execution, or simply moving to a different section of code under certain conditions without the need for many <code>if...else</code>  statements.</p>
+            <p>We create our own errors through the use of the <code>throw</code> statement. The <code>throw</code> statement stops execution of the current block of code (the statements after the throw will not be executed), and the program will terminate (unless... there's a <code>catch</code>. More on that later).</p>
+            <p>Here's an example where we throw the string "Error - I don't know what I'm doing."</p>
+            <pre>
+                let x = 10;
+                
+                if (x < 0) {
+                    console.log("Negative!");
+                } else {
+                    throw "Error - I don't know what I'm doing.";
+                }
+                
+                console.log("Does this log?");
+            </pre>
+            <p>
+                Executing this code will give us <code>Uncaught Error - I don't know what I'm doing.</code> and no, "Does this log?" will not log.
+
+Why is that? I thought we said only the current block of code will stop execution?
+
+Yes, but we also said the program will terminate (unless... there's a<code>catch</code>). That's how we deal with uncaught errors, we catch them!
+            </p>
+        </article>
+    </section>
+
+    <section>
+    <h1>Handling Errors with Try and Catch</h1>
+    <article>
+        <h2>Using Try and Catch</h2>
+        <p>The <code>try...catch</code>control flow statement helps us handle errors whenever they might appear. You will use these statements a lot when dealing with error-prone processes. While it is nice for us as developers to see errors so that we can debug our code, we don't want errors in production. Does that mean we need to make sure errors never occur? No, we just need to handle them properly.</p>
+        <p>The <code>try</code> block defines code to try. If an error is thrown within that block (either manually or by JavaScript), it will then execute the code within the <code>catch</code> block. There is also an optional <code>finally</code> block that will always be executed before control flow exits the <code>try...catch </code>construct.
+            <br>
+            Here's an example of this with our previous code:</p>
+        <pre>
+                let x = 10;
+
+                try {
+                    if (x < 0) {
+                        console.log("Negative!");
+                    } else {
+                        throw "Error - I don't know what I'm doing.";
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+
+                console.log("Does this log?");
+        </pre>
+        <p>
+            The catch block accepts an argument that can be named whatever you'd like, but the error is passed into the catch block as this name. Here, we named it error, but you'll also commonly see it simply named e or err.
+
+            In this example, we simply log the error rather than having it thrown to the user. Running this code shows that this does in fact change the behavior of the program, as "Does this log?" does, in fact, log. Since the exception is caught and handled, the script is allowed to continue.
+
+            Most of the time, your error handling structures will be a bit more complex, and ensure that the error is properly processed and accounted for, not simply tossed to the side.
+            <br>
+            Here's slightly a more complex example:
+        </p>
+   
+        <pre>
+let x = 10;
+
+try {
+    if (x > 0) {
+        let isEven = (x % 2 == 0) ? true : false;
+    } else if (x <= 0) {
+        throw "Error - Value of 0 or below.";
+    }
+
+    console.log(isEven);
+    } catch (err) {
+        console.log(err);
+    } finally {
+        console.log(x);
+    }
+        </pre>
+        <p>What will be logged to the console in this example? Why?</p>
+</article>
+</section>
+
+<section>
+    <h1>Types of Errors</h1>
+    <article>
+        <h2>Common Error Types</h2>
+        <p>The most common types of errors are:</p>
+        <ul>
+            <li> <strong>Errors: errors</strong> within the spelling and grammar of your code that cause the program to stop working partially through (or not run at all). These types of errors are usually simple fixes as long as you know what you're looking for.</li>
+            <li> <strong>Errors: errors</strong>where the syntax is correct, but the logic behind the code is not what you inteded it to be. The program will run, but it will give incorrect results. These errors are much more difficult to debug, as there is no error thrown that directs you to the source of the error.</li>
+        </ul>
+        <p>We've already encountered a syntax error in one of the previous examples. Let's look at that example again and examine the output in the Chrome devtools console:</p>
+        <pre>
+            let x = 5;
+
+            if (x > 0)
+                console.log('Positive!');
+                x++;
+            else
+                console.log('Negative.');
+                x--;
+        </pre>
+        <p> <strong style="color: red;">Note</strong> expected, we see the SyntaxError alongside its message: "Unexpected token 'else'".
+
+        </p>
+    </article>
+</section>
+
+<!-- Previous sections -->
+
+<section>
+    <h1>Debugging in JavaScript</h1>
+    <article>
+        <h2>Introduction to Debugging</h2>
+        <p>As we continue our example with debugging in Chrome, it is important to note that most code editors have options for native debugging and many other features. The process is similar if not identical across platforms. Research what might be available to you in order to increase your coding efficiency!
+            In order to explore debugging, we need to create a proper file to work through. Create an html file with the following contents:</p>
+    </article>
+
+    <article>
+        <h2>Creating a Debugging Example</h2>
+        <p>In order to explore debugging, we need to create a proper file to work through. Create an html file with the following contents:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Debugging Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let x = 10;
+        let isEven;
+
+        try {
+            if (x &gt; 0) {
+                isEven = (x % 2 == 0) ? false : true;
+            } else if (x &lt;= 0) {
+                throw "Error - Value of 0 or below.";
+            }
+
+            console.log(isEven);
+        } catch (err) {
+            console.log(err);
+        } finally {
+            console.log(x);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>Here we have introduced a very simple, very easy to find logic error, but we'll use it to demonstrate debugging.
+            <br>
+            If we open this file in Chrome sources, we see the following:
+            <pre>
+            <img src="../images/debugging.png" alt="Debugging">
+        </pre>
+        </p>
+    </article>
+
+    <article>
+        <h2>Using Breakpoints</h2>
+        <p>The key feature of a debugger is breakpoints. By clicking to the left of the line numbers in the file viewer, we can set breakpoints that will automatically pause execution of the script...</p>
+        <!-- More details about breakpoints -->
+    </article>
+
+    <article>
+        <h2>Debugger Statement</h2>
+        <p>Another option for setting breakpoints is the debugger statement. The debugger statement acts like a breakpoint within the source code itself...</p>
+        <pre>
+let x = 10;
+let isEven;
+
+try {
+    if (x &gt; 0) {
+        isEven = (x % 2 == 0) ? false : true;
+        debugger;
+    } else if (x &lt;= 0) {
+        throw "Error - Value of 0 or below.";
+    }
+
+    console.log(isEven);
+} catch (err) {
+    console.log(err);
+} finally {
+    console.log(x);
+}
+        </pre>
+    </article>
+
+    <!-- Additional information and articles -->
+</section>
+
+<!-- Continue with other sections -->
+
     </main>
     <footer>
 
